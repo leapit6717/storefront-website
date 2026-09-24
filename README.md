@@ -2,13 +2,26 @@
 
 ## Website Purpose
 
-Blush and Luxe Boutique is an e-commerce website created by Leah Semaj Pittman for the SDC260 course. The store offers designer-inspired purses, jewelry, sunglasses, wallets, beauty products, shoes, fragrance, scarves, and hair accessories.
+Blush and Luxe Boutique is an e-commerce website created by Leah Semaj Pittman for the SDC260 course. The store offers designer-inspired handbags, jewelry, sunglasses, wallets, beauty products, shoes, fragrance, and feminine accessories.
 
-The purpose of the website is to provide customers with an organized and easy-to-use shopping experience. Customers can browse products, read product descriptions, visit the shopping cart, enter shipping and purchase information, apply a coupon code, and complete a demonstration checkout.
+Customers can browse ten products, view product descriptions and prices, add products to a shopping cart, adjust quantities, remove products, apply a coupon, and complete a demonstration checkout.
+
+## Website Pages
+
+* `index.html` - Store homepage
+* `shop.html` - Product catalog containing ten products
+* `product-details.html` - Featured product information
+* `cart.html` - Interactive shopping cart
+* `checkout.html` - Shipping, payment, coupon, and checkout form
+* `order-confirmation.html` - Completed order information
+* `about-contact.html` - Store information and contact form
+* `styles.css` - Website colors, layout, forms, cart, and responsive design
+* `script.js` - Products, cart, inventory, form validation, coupon, and checkout functions
+* `images` - Folder containing the ten product images
 
 ## Products
 
-The website includes the following 10 products:
+The store currently displays the following ten products:
 
 1. Blush Designer Handbag
 2. Gold Charm Bracelet
@@ -21,87 +34,110 @@ The website includes the following 10 products:
 9. Blush Satin Scarf
 10. Jeweled Hair Clip
 
-## Pages and Files
+## Brand Colors
 
-- `index.html` - Store homepage
-- `shop.html` - Responsive product catalog
-- `product-details.html` - Featured product information
-- `cart.html` - Shopping cart
-- `checkout.html` - Shipping and purchase forms
-- `about-contact.html` - Store information and contact form
-- `order-confirmation.html` - Order confirmation page
-- `styles.css` - External stylesheet linked to the website pages
-- `script.js` - Product loop, form validation, and coupon discount
-- `images` - Folder containing the 10 product images
+* Deep Burgundy: `#4A102A`
+* Rose Pink: `#B83268`
+* Blush Pink: `#FCE7F3`
+* Soft Cream: `#FFF1E6`
+* White: `#FFFFFF`
 
-## Brand Theme
+## Product Display Features
 
-Blush and Luxe Boutique uses a feminine and elegant visual design. The website uses the following colors:
+* Uses a JavaScript loop to display ten products
+* Displays each product’s name, image, description, category, price, and available stock
+* Uses a responsive product layout
+* Displays products correctly on desktop, tablet, and mobile screens
+* Provides descriptive alternative text for product images
 
-- Deep Burgundy: `#4A102A`
-- Rose Pink: `#B83268`
-- Blush Pink: `#FCE7F3`
-- Soft Cream: `#FFF1E6`
-- White: `#FFFFFF`
+## Shopping Cart Features
 
-## Interactive Features
+* Allows products to be added to the shopping cart
+* Displays product names, prices, quantities, and item totals
+* Calculates and displays the current cart total
+* Allows customers to increase or decrease product quantities
+* Allows individual products to be removed
+* Includes a button to clear the entire shopping cart
+* Includes a button that navigates to the checkout page
+* Saves the shopping cart through browser refreshes using local storage
+* Displays immediate confirmation when a product is added
+* Displays the number of products currently in the cart
 
-- Displays 10 products using a JavaScript loop
-- Organizes products in a responsive layout
-- Validates the required contact form fields
-- Validates the required shipping fields
-- Validates the required purchase fields
-- Checks whether the coupon code exists
-- Applies a 20% discount to the order total
-- Displays success and error messages
-- Redirects customers to an order confirmation page
+## Inventory Features
 
-## Test Coupon
+* Reduces the available stock when a product is added to the cart
+* Increases the available stock when a product is removed
+* Updates inventory when the quantity is changed
+* Prevents customers from adding products with zero available stock
+* Disables the Add to Cart button when a product sells out
+* Displays an “Out of Stock” message and tooltip
 
-The coupon code used to test the discount feature is:
+## Contact and Checkout Features
 
-`BLUSH20`
+* Validates the required contact form fields
+* Validates the customer’s shipping information
+* Validates demonstration payment information
+* Displays the products from the shopping cart in the order summary
+* Calculates the order subtotal automatically
+* Checks whether a coupon code exists
+* Applies a 20 percent discount with coupon code `BLUSH20`
+* Prevents checkout when the shopping cart is empty
+* Creates a demonstration order number
+* Displays purchased products and the final total on the order confirmation page
 
-The regular order total is `$84.99`. After the 20% discount, the total is `$67.99`.
-
-## Planned Feature Roadmap
+## Feature Roadmap
 
 ### Phase 1 - Initial Setup
 
-- Create the basic website structure
-- Create the store homepage
-- Establish the GitHub repository
-- Create an external CSS stylesheet
+* Created the basic website structure
+* Created the store homepage
+* Created the GitHub repository
+* Created an external stylesheet
 
 ### Phase 2 - Core Features
 
-- Add the main website content
-- Add navigation to every page
-- Add product images and descriptions
-- Create the shopping cart
-- Create the checkout page
-- Create the contact page
+* Added the main website content
+* Added navigation to every page
+* Added product images and descriptions
+* Created the cart and checkout pages
+* Created the contact form
 
 ### Phase 3 - Design and Usability
 
-- Apply the boutique color palette
-- Make the website responsive
-- Improve readability and accessibility
-- Add alternative text to product images
-- Display products using JavaScript
-- Add form validation
-- Add a working coupon discount
+* Applied the boutique color palette
+* Made the website responsive
+* Added accessible image descriptions
+* Added JavaScript product display
+* Added contact and checkout form validation
+* Added coupon validation and discount calculations
 
-### Phase 4 - Testing and Launch
+### Phase 4 - Shopping Cart and Inventory
 
-- Test all navigation links
-- Test the 10-product JavaScript loop
-- Test required contact form fields
-- Test shipping and purchase information
-- Test the coupon code and discount
-- Fix errors and make improvements
-- Prepare the website for submission
+* Created a functional shopping cart
+* Added quantity adjustment controls
+* Added individual product removal
+* Added a Clear Entire Cart button
+* Added browser storage for the cart and inventory
+* Added inventory tracking
+* Added out-of-stock protection
+* Connected the cart to checkout
+* Added order confirmation logic
+* Tested the shopping, cart, coupon, checkout, and confirmation process
 
-## How to View the Website
+## Coupon Code
 
-Open `index.html` in a web browser to begin using the website.
+Use the following coupon code during the demonstration checkout:
+
+`BLUSH20`
+
+This coupon applies a 20 percent discount to the order total.
+
+## Viewing the Website
+
+Open `index.html` in a web browser to begin viewing the website. Use the navigation menu to visit the shop, shopping cart, checkout, contact, and other pages.
+
+## Project Author
+
+Leah Semaj Pittman
+SDC260 Website Project
+September 2026
