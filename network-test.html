@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Network Connection Test | Blush and Luxe Boutique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Created by Leah Semaj Pittman on September 29, 2026 -->
+    <header>
+        <div class="header-row">
+            <a class="brand" href="index.html">Blush &amp; Luxe</a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about-contact.html">About &amp; Contact</a></li>
+                    <li><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-card" aria-labelledby="networkTestHeading">
+            <h1 id="networkTestHeading">Network Connection Test</h1>
+            <p>This page displays information about the website's current local network connection.</p>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th scope="row">Local Host Name</th>
+                        <td id="hostName">Checking connection...</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Current Communication Port</th>
+                        <td id="communicationPort">Checking connection...</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Current Transmission Protocol</th>
+                        <td id="transmissionProtocol">Checking connection...</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last Time Launched</th>
+                        <td id="lastLaunched">Checking launch history...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p id="connectionMessage" class="form-status" aria-live="polite"></p>
+            <p><a class="button" href="index.html">Return to Homepage</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Blush and Luxe Boutique</p>
+        <p>Website project created by Leah Semaj Pittman</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const hostName = window.location.hostname || "Not available - open with Live Server";
+        const protocolName = window.location.protocol.replace(":", "").toUpperCase();
+
+        let communicationPort = window.location.port;
+        if (!communicationPort && window.location.protocol === "http:") {
+            communicationPort = "80";
+        } else if (!communicationPort && window.location.protocol === "https:") {
+            communicationPort = "443";
+        } else if (!communicationPort) {
+            communicationPort = "Not available - open with Live Server";
+        }
+
+        const previousLaunch = localStorage.getItem("networkTestLastLaunch");
+        const currentLaunch = new Date().toLocaleString();
+
+        document.getElementById("hostName").textContent = hostName;
+        document.getElementById("communicationPort").textContent = communicationPort;
+        document.getElementById("transmissionProtocol").textContent = protocolName;
+        document.getElementById("lastLaunched").textContent = previousLaunch || "This is the first launch of the Network Connection Test page.";
+
+        const connectionMessage = document.getElementById("connectionMessage");
+        if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+            connectionMessage.textContent = "Network connection recognized successfully.";
+            connectionMessage.className = "form-status success-message";
+        } else {
+            connectionMessage.textContent = "Open this page with VS Code Live Server to display the local network connection.";
+            connectionMessage.className = "form-status error-message";
+        }
+
+        localStorage.setItem("networkTestLastLaunch", currentLaunch);
+    </script>
+</body>
+</html>
